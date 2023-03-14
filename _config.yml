@@ -1,7 +1,9 @@
 #theme: jekyll-theme-cayman
 #theme: jekyll-theme-midnight
 #theme: jekyll-theme-slate
-theme: jekyll-theme-minimal
+#theme: jekyll-theme-minimal
+theme: jekyll-theme-gitbook
 
 title: "Sample test page wk-mnA"
 description: "just a test page"
+
