@@ -1,22 +1,18 @@
 ---
 layout: default
 ---
-# ○○ AI SDK
+# Software Name
 
 ## Overview
-What is AI SDK?  
+What is "Software Name"?  
 For whom?  
-- Target Product:  Evaluation Board Kit
-
-## Download
-To download AI SDK, please see Web.  
-
+- Target Product: "Product Name"
 
 ## Getting Started
-To get start the AI SDK, please see [Getting Started]()
+To get start the "Software Name", please see [Getting Started]()
 
 
-## AI Applications
+## Applications
 
 ## Demo 
 
