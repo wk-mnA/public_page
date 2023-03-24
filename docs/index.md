@@ -96,4 +96,4 @@ TEST<br>
 TEST<br>
 TEST<br>
 
-<a href="{{ site.url }}{% link index.md %}#top"> Link to top</a>
+<a href="{{ site.url }}{{ site.baseurl }}{% link index.md %}#top"> Link to top</a>
