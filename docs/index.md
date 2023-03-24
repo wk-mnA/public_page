@@ -22,7 +22,6 @@ To get start the "Software Name", please see [Getting Started]()
 
 
 
-<a href="{{ site.url }}#top"> Link to top</a>
 
 ## Demo 
 TEST<br>
@@ -96,3 +95,5 @@ TEST<br>
 TEST<br>
 TEST<br>
 TEST<br>
+
+<a href="{{ site.url }}{% link index.md %}#top"> Link to top</a>
