@@ -9,7 +9,7 @@ For whom?
 - Target Product: "Product Name"
 
 ## Getting Started
-To get start the "Software Name", please see [Getting Started]()
+To get start the "Software Name", please see [Getting Started]({{ site.url }}{{ site.baseurl }}{% link getting_started.md %})
 
 <div class="top">Test</div>
 <br>
