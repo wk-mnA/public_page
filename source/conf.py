@@ -31,5 +31,5 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-# html_style = '_static/assets/css/style.scss'
-html_css_files = ['_static/assets/css/style.scss']
+html_style = 'assets/css/style.scss'
+# html_css_files = ['_static/assets/css/style.scss']
