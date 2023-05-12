@@ -14,6 +14,7 @@ author = 'wkmna'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    "sphinxcontrib.sass",
     'sphinx.ext.mathjax', 
     'sphinx.ext.todo', 
     'sphinx.ext.githubpages',
@@ -31,5 +32,12 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-html_style = 'assets/css/style.scss'
+# html_style = 'assets/css/style.css'
+html_css_files = ["_static/css/style.css"]
+
+sass_src_dir = "_static/assets/css"
+sass_out_dir = "_static/css"
+sass_targets = {
+ "style.scss": "style.css"
+}
 # html_css_files = ['_static/assets/css/style.scss']
