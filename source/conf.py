@@ -33,7 +33,7 @@ exclude_patterns = []
 html_theme = 'alabaster'
 html_static_path = ['_static']
 # html_style = 'assets/css/style.css'
-html_css_files = ["_static/css/style.css"]
+html_css_files = ["css/style.css"]
 
 sass_src_dir = "_static/assets/css"
 sass_out_dir = "_static/css"
