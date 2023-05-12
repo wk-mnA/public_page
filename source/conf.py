@@ -13,7 +13,13 @@ author = 'wkmna'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.mathjax', 'sphinx.ext.todo', 'sphinx.ext.githubpages']
+extensions = [
+    'sphinx.ext.mathjax', 
+    'sphinx.ext.todo', 
+    'sphinx.ext.githubpages',
+    "sphinx_multiversion",
+    'myst_parser'
+]
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -25,4 +31,5 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-html_style = 'assets/css/style.scss'
+# html_style = '_static/assets/css/style.scss'
+html_css_files = ['_static/assets/css/style.scss']
