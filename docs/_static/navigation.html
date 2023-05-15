@@ -1,58 +1,54 @@
-{% if theme_logo %}
-<p class="logo">
-  <a href="{{ pathto(master_doc) }}">
-    <img class="logo" src="{{ pathto('_static/' ~ theme_logo, 1) }}" alt="Logo"/>
-    {% if theme_logo_name|lower == 'true' %}
-    <h1 class="logo logo-name">{{ project }}</h1>
-    {% endif %}
-  </a>
-</p>
-{% else %}
-<h1 class="logo"><a href="{{ pathto(master_doc) }}">{{ project }}</a></h1>
-{% endif %}
+<h3>{{ _('Navigation') }}</h3>
+{{ toctree(includehidden=theme_sidebar_includehidden, collapse=theme_sidebar_collapse) }}
+{% if theme_extra_nav_links %}
+<hr />
+<ul>
+    <div class="web_index">
+        <details open>
+          <summary>
+            <a href="">Getting Started</a>
+          </summary>
+          <ul class="index">
+            <li><a href="#step1">1. Obtain an board</a></li>
+            <li><a href="#step2">2. Obtain Necessary Environment</a></li>
+            <details>
+              <summary>
+                <a href="">Appendix</a>
+              </summary>
+                <ul class="index">
+                  <li>
+                    <a href="#a1">A1</a>
+                  </li>
+                </ul>
+            </details>
+          </ul>
+        </details>
 
-{% if theme_description %}
-<p class="blurb">{{ description }}</p>
-{% endif %}
+<!-- Copy index_list.html start -->
+        <details open>
+          <summary>
+            <a href="#applications"> Applications</a>
+          </summary>
+          <ul class="index">
+                <details open>
+              <summary>
+                <a href="#agriculture">Agriculture</a>
+              </summary>
+              <ul class="index">
+                    <li><a href="#agriculture1">Defense</a></li>
+              </ul>
+            </details>
 
-<p class="view"><a href="{{ github_repo_url }}">View the Project on GitHub <small>{{ github_repo_url }}</small></a></p>
-<!-- {% if theme_github_user and theme_github_repo %}
-{% if theme_github_button|lower == 'true' %}
-<p>
-<iframe src="https://ghbtns.com/github-btn.html?user={{ theme_github_user }}&repo={{ theme_github_repo }}&type={{ theme_github_type }}&count={{ theme_github_count }}&size=large&v=2"
-  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
-</p>
+          </ul>
+        </details>
+    
+    
+<!-- Copy index_list.html end -->
+        <details open>
+          <summary>
+            <a href="#demo">Demo</a>
+          </summary>
+        </details>
+    </div>
+</ul>
 {% endif %}
-{% endif %} -->
-
-<!-- {% if theme_travis_button|lower != 'false' %}
-{% if theme_travis_button|lower == 'true' %}
-    {% set path = theme_github_user + '/' + theme_github_repo %}
-{% else %}
-    {% set path = theme_travis_button %}
-{% endif %}
-<p>
-<a class="badge" href="https://travis-ci.org/{{ path }}">
-    <img
-        alt="https://secure.travis-ci.org/{{ path }}.svg?branch={{ theme_badge_branch }}"
-        src="https://secure.travis-ci.org/{{ path }}.svg?branch={{ theme_badge_branch }}"
-    />
-</a>
-</p>
-{% endif %}
-
-{% if theme_codecov_button|lower != 'false' %}
-{% if theme_codecov_button|lower == 'true' %}
-    {% set path = theme_github_user + '/' + theme_github_repo %}
-{% else %}
-    {% set path = theme_codecov_button %}
-{% endif %}
-<p>
-<a class="badge" href="https://codecov.io/github/{{ path }}">
-    <img
-    alt="https://codecov.io/github/{{ path }}/coverage.svg?branch={{ theme_badge_branch }}"
-    src="https://codecov.io/github/{{ path }}/coverage.svg?branch={{ theme_badge_branch }}"
-    />
-</a>
-</p>
-{% endif %} -->

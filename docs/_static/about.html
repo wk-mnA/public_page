@@ -8,24 +8,25 @@
   </a>
 </p>
 {% else %} -->
-<h1 class="logo logo-name"><a href="{{ pathto(master_doc) }}">{{ project }}</a></h1>
+<h1 class="logo"><a href="{{ pathto(master_doc) }}">{{ project }}</a></h1>
 <!-- {% endif %} -->
 
 {% if theme_description %}
-<p class="blurb">{{ description }}</p>
+<p class="blurb">{{ theme_description }}</p>
 {% endif %}
 
-<p class="view"><a href="{{ theme_github_repo }}">View the Project on GitHub <small>{{ theme_github_repo }}</small></a></p>
-<!-- {% if theme_github_user and theme_github_repo %}
+{% if theme_github_user and theme_github_repo %}
 {% if theme_github_button|lower == 'true' %}
-<p>
+<!-- <p>
 <iframe src="https://ghbtns.com/github-btn.html?user={{ theme_github_user }}&repo={{ theme_github_repo }}&type={{ theme_github_type }}&count={{ theme_github_count }}&size=large&v=2"
   allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
-</p>
+</p> -->
+<p class="view"><a href="{{ github_repo_url }}">View the Project on GitHub <small>{{ github_repo_url }}</small></a></p>
+        
 {% endif %}
-{% endif %} -->
+{% endif %}
 
-<!-- {% if theme_travis_button|lower != 'false' %}
+{% if theme_travis_button|lower != 'false' %}
 {% if theme_travis_button|lower == 'true' %}
     {% set path = theme_github_user + '/' + theme_github_repo %}
 {% else %}
@@ -55,4 +56,4 @@
     />
 </a>
 </p>
-{% endif %} -->
+{% endif %}

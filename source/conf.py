@@ -64,7 +64,6 @@ html_theme_options = {
     # "navigation_with_keys" : True,
     # "tidelift_url": "https://tidelift.com/subscription/pkg/pypi-alabaster?utm_source=pypi-alabaster&utm_medium=referral&utm_campaign=docs",  # noqa
 }
-
 # extensions.append("releases")
 # releases_github_path = "sphinx-doc/alabaster"
 # # Our pre-0.x releases are unstable / mix bugs+features
