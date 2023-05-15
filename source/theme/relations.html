@@ -1,4 +1,4 @@
-<!-- {% if theme_logo %}
+{% if theme_logo %}
 <p class="logo">
   <a href="{{ pathto(master_doc) }}">
     <img class="logo" src="{{ pathto('_static/' ~ theme_logo, 1) }}" alt="Logo"/>
@@ -7,15 +7,15 @@
     {% endif %}
   </a>
 </p>
-{% else %} -->
-<h1 class="logo logo-name"><a href="{{ pathto(master_doc) }}">{{ project }}</a></h1>
-<!-- {% endif %} -->
+{% else %}
+<h1 class="logo"><a href="{{ pathto(master_doc) }}">{{ project }}</a></h1>
+{% endif %}
 
 {% if theme_description %}
 <p class="blurb">{{ description }}</p>
 {% endif %}
 
-<p class="view"><a href="{{ theme_github_repo }}">View the Project on GitHub <small>{{ theme_github_repo }}</small></a></p>
+<p class="view"><a href="{{ github_repo_url }}">View the Project on GitHub <small>{{ github_repo_url }}</small></a></p>
 <!-- {% if theme_github_user and theme_github_repo %}
 {% if theme_github_button|lower == 'true' %}
 <p>
