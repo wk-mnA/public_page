@@ -41,3 +41,6 @@ sass_targets = {
  "style.scss": "style.css"
 }
 # html_css_files = ['_static/assets/css/style.scss']
+html_sidebars = {
+   '**': ['versioning.html'],
+}
