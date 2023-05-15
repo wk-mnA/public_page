@@ -5,9 +5,10 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+from datetime import datetime
 
 project = 'Title'
-copyright = '2023, wkmna'
+copyright = f"{datetime.now().year} wkmna"
 author = 'wkmna'
 description = 'This is a test website\nTest'
 github_repo_url = "https://github.com/wk-mnA/public_page"
@@ -53,8 +54,8 @@ html_sidebars = {
 
 html_theme_options = {
     "description": "A light, configurable Sphinx theme",
-    "github_user": "wkmna",
-    "github_repo": "alabaster",
+    "github_user": "wk-mna",
+    "github_repo": "public_page",
     "fixed_sidebar": True,
-    "tidelift_url": "https://tidelift.com/subscription/pkg/pypi-alabaster?utm_source=pypi-alabaster&utm_medium=referral&utm_campaign=docs",  # noqa
+    # "tidelift_url": "https://tidelift.com/subscription/pkg/pypi-alabaster?utm_source=pypi-alabaster&utm_medium=referral&utm_campaign=docs",  # noqa
 }
