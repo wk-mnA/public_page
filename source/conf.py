@@ -15,6 +15,7 @@ github_repo_url = "https://github.com/wk-mnA/public_page"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
+master_doc = "index"
 extensions = [
     "sphinxcontrib.sass",
     'sphinx.ext.mathjax', 
@@ -34,6 +35,7 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+html_static_path = ['theme']
 # html_style = 'assets/css/style.css'
 html_css_files = ["css/style.css"]
 
@@ -57,5 +59,12 @@ html_theme_options = {
     "github_user": "wk-mna",
     "github_repo": "public_page",
     "fixed_sidebar": True,
+    # "show_prev_next" : True,
+    # "navigation_with_keys" : True,
     # "tidelift_url": "https://tidelift.com/subscription/pkg/pypi-alabaster?utm_source=pypi-alabaster&utm_medium=referral&utm_campaign=docs",  # noqa
 }
+
+# extensions.append("releases")
+# releases_github_path = "sphinx-doc/alabaster"
+# # Our pre-0.x releases are unstable / mix bugs+features
+# releases_unstable_prehistory = True
