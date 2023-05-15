@@ -6,10 +6,10 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'docs'
+project = 'Title'
 copyright = '2023, wkmna'
 author = 'wkmna'
-
+theme_description = 'This is a test website\nTest'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
@@ -50,18 +50,10 @@ html_sidebars = {
     ]
 }
 
-# html_theme_options = {
-#      "icon_links": [
-#          {
-#              "name": "GitHub",
-#              "url": "https://gitlab.com/jacst/goodpractice/",  # required
-#              "icon": "fab fa-gitlab",
-#              "type": "fontawesome",  # Default is fontawesome
-#          },
-#          {
-#              "name": "Get the Board",
-#              "url": "https://twitter.com/jacst_jp",
-#              "icon": "fab fa-twitter",
-#          },
-#      ],
-# }
+html_theme_options = {
+    "description": "A light, configurable Sphinx theme",
+    "github_user": "wkmna",
+    "github_repo": "alabaster",
+    "fixed_sidebar": True,
+    "tidelift_url": "https://tidelift.com/subscription/pkg/pypi-alabaster?utm_source=pypi-alabaster&utm_medium=referral&utm_campaign=docs",  # noqa
+}
