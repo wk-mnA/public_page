@@ -42,5 +42,26 @@ sass_targets = {
 }
 # html_css_files = ['_static/assets/css/style.scss']
 html_sidebars = {
-   '**': ['versioning.html'],
+    "**": [
+        "about.html",
+        "navigation.html",
+        "relations.html",
+        "searchbox.html",
+    ]
 }
+
+# html_theme_options = {
+#      "icon_links": [
+#          {
+#              "name": "GitHub",
+#              "url": "https://gitlab.com/jacst/goodpractice/",  # required
+#              "icon": "fab fa-gitlab",
+#              "type": "fontawesome",  # Default is fontawesome
+#          },
+#          {
+#              "name": "Get the Board",
+#              "url": "https://twitter.com/jacst_jp",
+#              "icon": "fab fa-twitter",
+#          },
+#      ],
+# }
