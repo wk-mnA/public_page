@@ -9,7 +9,8 @@
 project = 'Title'
 copyright = '2023, wkmna'
 author = 'wkmna'
-theme_description = 'This is a test website\nTest'
+description = 'This is a test website\nTest'
+github_repo_url = "https://github.com/wk-mnA/public_page"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
