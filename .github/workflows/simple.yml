@@ -16,7 +16,7 @@ jobs:
           persist-credentials: false
 
       - name: get_version
-        run: echo "RELEASE_VERSION=3.00" >> $GITHUB_ENV
+        run: echo "RELEASE_VERSION=2.00" >> $GITHUB_ENV
 
       # - name: 'Get Previous tag'
       #   id: previoustag
