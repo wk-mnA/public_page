@@ -16,7 +16,7 @@ jobs:
           persist-credentials: false
 
       - name: get_version
-        run: echo "RELEASE_VERSION=1.00" >> $GITHUB_ENV
+        run: echo "RELEASE_VERSION=2.00" >> $GITHUB_ENV
 
       # you probably would do build and test steps here
 
@@ -35,12 +35,11 @@ jobs:
         run: |
           echo "Redirecting stable to newly released version" 
           ln -sf $RELEASE_VERSION latest
-        #   git config user.name test
-        #  # "$(git --no-pager log --format=format:'%an' -n 1)"
-        #   git config user.email test@github.com
-        # # "$(git --no-pager log --format=format:'%ae' -n 1)"
-        #   git add latest
-        #   git commit -m "redirect stable to new version $RELEASE_VERSION"
+          git pull origin gh-pages
+          git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+          git add latest
+          git commit -m "redirect stable to new version $RELEASE_VERSION"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
