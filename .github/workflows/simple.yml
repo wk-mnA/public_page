@@ -17,6 +17,7 @@ jobs:
 
       - name: get_version
         run: echo "RELEASE_VERSION=2.00" >> $GITHUB_ENV
+        ln -s ${{ env.RELEASE_VERSION }} latest
 
       # - name: 'Get Previous tag'
       #   id: previoustag
@@ -58,14 +59,16 @@ jobs:
           git pull origin gh-pages
           git add latest
           git commit -m "redirect latest to new version ${{ env.RELEASE_VERSION }}"
+      
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-      # - name: Deploy redirect
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./redirect
-      #     keep_files: true
+
+      - name: Deploy redirect
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./redirect
+          keep_files: true
