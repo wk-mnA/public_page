@@ -37,9 +37,7 @@ jobs:
           echo "Redirecting stable to newly released version" 
           ln -sf $RELEASE_VERSION latest
           git config user.name test
-         # "$(git --no-pager log --format=format:'%an' -n 1)"
           git config user.email test@github.com
-        # "$(git --no-pager log --format=format:'%ae' -n 1)"
           git add latest
           git commit -m "redirect stable to new version $RELEASE_VERSION"
 
