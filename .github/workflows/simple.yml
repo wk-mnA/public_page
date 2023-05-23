@@ -18,12 +18,6 @@ jobs:
       - name: get_version
         run: echo "RELEASE_VERSION=2.00" >> $GITHUB_ENV
 
-      # - name: 'Get Previous tag'
-      #   id: previoustag
-      #   uses: "WyriHaximus/github-action-get-previous-tag@v1"
-        # with:
-          # fallback: 1.0.0 # Optional fallback tag to use when no tag can be found
-
       # you probably would do build and test steps here
 
       # https://github.com/marketplace/actions/github-pages-action
@@ -49,7 +43,7 @@ jobs:
       #     destination_dir: "latest"
 
       - name: Deploy redirect
-        uses: peaceiris/actions-gh-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./redirect
