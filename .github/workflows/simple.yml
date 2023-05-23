@@ -30,19 +30,25 @@ jobs:
           destination_dir: ${{ env.RELEASE_VERSION }}
       # https://github.com/marketplace/actions/github-pages-action
       
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # deploy the current public folder
-          # to <base url>/x.y.z version subfolder
-          publish_dir: ./docs
-          # destination_dir: "1.00"
-          destination_dir: "latest"
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     # deploy the current public folder
+      #     # to <base url>/x.y.z version subfolder
+      #     publish_dir: ./docs
+      #     # destination_dir: "1.00"
+      #     destination_dir: "latest"
+      - name: Redirect stable to new release
+        run: |
+          echo "Redirecting latest to newly released version" 
+          ln -sf $RELEASE_VERSION latest
+          git add latest
+          git commit -m "redirect latest to new version $RELEASE_VERSION"
 
-      - name: Deploy redirect
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./redirect
-          keep_files: true
+      # - name: Deploy redirect
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./redirect
+      #     keep_files: true
