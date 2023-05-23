@@ -1,24 +1,27 @@
-# 参考
-# https://docs.github.com/ja/actions/learn-github-actions/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows
- 
-# Workflow名
-name: Shell Commands
-# イベントトリガー
-# Git Pushした時にこのワークフローを実行する
-on: [push]
- 
+name: deploy
+# only deploy site from master branch
+on:
+  push:
+    branches:
+      - master
 jobs:
-  # job名(任意の名前で良い)
-  run-shell-commmand:
-    # virtual machineの形式を指定
+  deploy:
     runs-on: ubuntu-latest
-    # jobのステップ
     steps:
-      # ステップ名
-      - name: echo a string
-        run: echo "Hello World"
-      # ステップ2
-      - name: multiline script
-        run: | # 複数のコマンドを記載したいときは|(パイプ)で繋ぐ
-          node -v
-          npm -v
+      # https://github.com/actions/checkout
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      # you probably would do build and test steps here
+
+      # https://github.com/marketplace/actions/github-pages-action
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # deploy the current public folder
+          # to <base url>/x.y.z version subfolder
+          publish_dir: ./docs
+          destination_dir: 1.0.0
