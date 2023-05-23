@@ -43,11 +43,11 @@ jobs:
       - name: Redirect stable to new release
         run: |
           echo "Redirecting latest to newly released version" 
-          ln -sf $RELEASE_VERSION latest
+          ln -sf ${{ env.RELEASE_VERSION }} latest
           git config user.name actions-user
           git config user.email action@github.com
           git add latest
-          git commit -m "redirect latest to new version $RELEASE_VERSION"
+          git commit -m "redirect latest to new version ${{ env.RELEASE_VERSION }}"
 
       # - name: Deploy redirect
       #   uses: peaceiris/actions-gh-pages@v3
