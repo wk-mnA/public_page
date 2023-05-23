@@ -10,7 +10,7 @@ from datetime import datetime
 project = 'Title'
 copyright = f"{datetime.now().year} wkmna"
 author = 'wkmna'
-description = ''
+description = 'This is a test website\nTest'
 github_repo_url = "https://github.com/wk-mnA/public_page"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -33,12 +33,13 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'custom_theme'
-html_theme_path = ['.']
+
+# html_theme = 'custom_theme'
+# html_theme_path = ['.']
 html_static_path = ['_static']
-html_static_path = ['custom_theme']
+# html_static_path = ['custom_theme']
 # html_style = 'assets/css/style.css'
-html_css_files = ["css/style.css"]
+# html_css_files = ["css/style.css"]
 
 sass_src_dir = "_static/assets/css"
 sass_out_dir = "_static/css"
@@ -56,7 +57,7 @@ html_sidebars = {
 }
 
 html_theme_options = {
-    "description": "This is a test website<br>Test",
+    "description": "A light, configurable Sphinx theme",
     "github_user": "wk-mna",
     "github_repo": "public_page",
     "fixed_sidebar": True,
@@ -64,6 +65,7 @@ html_theme_options = {
     # "navigation_with_keys" : True,
     # "tidelift_url": "https://tidelift.com/subscription/pkg/pypi-alabaster?utm_source=pypi-alabaster&utm_medium=referral&utm_campaign=docs",  # noqa
 }
+
 # extensions.append("releases")
 # releases_github_path = "sphinx-doc/alabaster"
 # # Our pre-0.x releases are unstable / mix bugs+features
