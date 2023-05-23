@@ -31,18 +31,16 @@ jobs:
           # destination_dir: "1.00"
           destination_dir: ${{ env.RELEASE_VERSION }}
 
-      # https://github.com/marketplace/actions/github-pages-action
-
       - name: Redirect latest to new release
         run: |
           echo "Redirecting stable to newly released version" 
           ln -sf $RELEASE_VERSION latest
-          git config user.name test
-         # "$(git --no-pager log --format=format:'%an' -n 1)"
-          git config user.email test@github.com
-        # "$(git --no-pager log --format=format:'%ae' -n 1)"
-          git add latest
-          git commit -m "redirect stable to new version $RELEASE_VERSION"
+        #   git config user.name test
+        #  # "$(git --no-pager log --format=format:'%an' -n 1)"
+        #   git config user.email test@github.com
+        # # "$(git --no-pager log --format=format:'%ae' -n 1)"
+        #   git add latest
+        #   git commit -m "redirect stable to new version $RELEASE_VERSION"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
