@@ -16,7 +16,7 @@ jobs:
           persist-credentials: false
 
       - name: get_version
-        run: echo "RELEASE_VERSION=1.00" >> $GITHUB_ENV
+        run: echo "RELEASE_VERSION=2.00" >> $GITHUB_ENV
 
       # you probably would do build and test steps here
 
@@ -32,13 +32,6 @@ jobs:
           destination_dir: ${{ env.RELEASE_VERSION }}
       # https://github.com/marketplace/actions/github-pages-action
 
-      - name: Deploy redirect
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./redirect
-          keep_files: true
-
       - name: Redirect latest to new release
         run: |
           echo "Redirecting stable to newly released version" 
@@ -53,3 +46,11 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
+
+      - name: Deploy redirect
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./redirect
+          keep_files: true
+
