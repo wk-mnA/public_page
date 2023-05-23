@@ -35,6 +35,7 @@ jobs:
         run: |
           echo "Redirecting stable to newly released version" 
           ln -sf $RELEASE_VERSION latest
+          git config pull.rebase false
           git pull origin gh-pages
           git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
           git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
