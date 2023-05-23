@@ -8,10 +8,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - id: get_version
-        uses: battila7/get-version-action@v2
-
-      - run: echo ${{ steps.get_version.outputs.version-without-v }}
 
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
@@ -19,8 +15,9 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set env
-        run: echo "RELEASE_VERSION=${{ steps.get_version.outputs.version-without-v }}" >> $GITHUB_ENV 
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=RELEASE_VERSION::${GITHUB_REF/refs\/tags\//}
 
       # you probably would do build and test steps here
 
