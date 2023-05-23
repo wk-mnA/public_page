@@ -54,6 +54,7 @@ jobs:
           ln -s ${{ env.RELEASE_VERSION }} latest
           git config user.name actions-user
           git config user.email action@github.com
+          git config pull.rebase true
           git pull origin gh-pages
           git add latest
           git commit -m "redirect latest to new version ${{ env.RELEASE_VERSION }}"
