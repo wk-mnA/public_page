@@ -26,6 +26,17 @@ jobs:
           publish_dir: ./docs
           # destination_dir: "1.00"
           destination_dir: "2.00"
+      # https://github.com/marketplace/actions/github-pages-action
+      
+      - name: Deploy latest
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # deploy the current public folder
+          # to <base url>/x.y.z version subfolder
+          publish_dir: ./docs
+          # destination_dir: "1.00"
+          destination_dir: "latest"
 
       - name: Deploy redirect
         uses: peaceiris/actions-gh-pages@v3
