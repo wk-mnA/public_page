@@ -10,7 +10,7 @@ from datetime import datetime
 project = 'Title'
 copyright = f"{datetime.now().year} wkmna"
 author = 'wkmna'
-description = 'This is a test website\nTest'
+description = ''
 github_repo_url = "https://github.com/wk-mnA/public_page"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -56,7 +56,7 @@ html_sidebars = {
 }
 
 html_theme_options = {
-    "description": "A light, configurable Sphinx theme",
+    "description": "This is a test website<br>Test",
     "github_user": "wk-mna",
     "github_repo": "public_page",
     "fixed_sidebar": True,
