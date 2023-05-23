@@ -1,0 +1,71 @@
+name: deploy-practice
+# only deploy site from master branch
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      # https://github.com/actions/checkout
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: get_version
+        run: echo "RELEASE_VERSION=2.00" >> $GITHUB_ENV
+
+      # - name: 'Get Previous tag'
+      #   id: previoustag
+      #   uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        # with:
+          # fallback: 1.0.0 # Optional fallback tag to use when no tag can be found
+
+      # you probably would do build and test steps here
+
+      # https://github.com/marketplace/actions/github-pages-action
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # deploy the current public folder
+          # to <base url>/x.y.z version subfolder
+          publish_dir: ./docs
+          # destination_dir: "1.00"
+          destination_dir: ${{ env.RELEASE_VERSION }}
+      # https://github.com/marketplace/actions/github-pages-action
+      
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     # deploy the current public folder
+      #     # to <base url>/x.y.z version subfolder
+      #     publish_dir: ./docs
+      #     # destination_dir: "1.00"
+      #     destination_dir: "latest"
+
+      - name: Redirect stable to new release
+        run: |
+          echo "Redirecting latest to newly released version" 
+          ln -s ${{ env.RELEASE_VERSION }} latest
+          git config user.name actions-user
+          git config user.email action@github.com
+          git config pull.rebase true
+          git pull origin gh-pages
+          git add latest
+          git commit -m "redirect latest to new version ${{ env.RELEASE_VERSION }}"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+      # - name: Deploy redirect
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./redirect
+      #     keep_files: true
