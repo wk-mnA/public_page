@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VERSION=$1
-if [$VERSION = ""]; then
+if [ $VERSION = "" ]; then
   echo "ERROR: please type version. e.g. ./push.sh 1.00"
   exit 1
 fi
