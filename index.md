@@ -5,7 +5,7 @@ layout: default
 <div class="container">
     <div class="row">
         <div class="top col-12">
-TESTTESTtestTEST
+TESTtestTEST
         </div>
     </div>
 </div>
