@@ -11,7 +11,7 @@ ln -sf $VERSION latest
 # git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
 git add .
 git commit -m "redirect latest to new version $VERSION"
-git pull origin origin/gh-pages
-git push origin origin/gh-pages
+# git pull origin origin/gh-pages
+git push origin gh-pages
 
 git checkout master
