@@ -8,16 +8,16 @@ jobs:
   deploy-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: helaili/jekyll-action@2.0.1
-        env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
-
       # https://github.com/actions/checkout
       - name: Checkout
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+
+      - uses: actions/checkout@v2
+      - uses: helaili/jekyll-action@2.0.1
+        env:
+          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
 
       - name: get_version
         run: echo "RELEASE_VERSION=1.00" >> $GITHUB_ENV
