@@ -19,7 +19,7 @@ dir_path="*"
 dirs=`find $dir_path -type d -name "*.**"`
 for dir in $dirs;
 do
-if [ $VERSION != $dir ]; then
+if [ $VERSION -nq $dir ]; then
     cp $VERSION/version.html $dir/version.html
     echo $dir
 fi
