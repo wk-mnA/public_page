@@ -1,1 +1,1 @@
-Sitemap: https://wk-mna.github.io/public_page/sitemap.xml
+Sitemap: https://wk-mna.github.io/public_page/1.00/sitemap.xml
