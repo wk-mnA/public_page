@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://0.0.0.0:4000/applications.html</loc>
+<loc>https://wk-mna.github.io/public_page/applications.html</loc>
 </url>
 <url>
-<loc>http://0.0.0.0:4000/getting_started.html</loc>
+<loc>https://wk-mna.github.io/public_page/getting_started.html</loc>
 </url>
 <url>
-<loc>http://0.0.0.0:4000/</loc>
+<loc>https://wk-mna.github.io/public_page/</loc>
 </url>
 <url>
-<loc>http://0.0.0.0:4000/</loc>
+<loc>https://wk-mna.github.io/public_page/</loc>
 </url>
 <url>
-<loc>http://0.0.0.0:4000/version.html</loc>
+<loc>https://wk-mna.github.io/public_page/version.html</loc>
 </url>
 <url>
-<loc>http://0.0.0.0:4000/redirect/</loc>
-<lastmod>2023-05-30T16:13:50+09:00</lastmod>
+<loc>https://wk-mna.github.io/public_page/redirect/</loc>
+<lastmod>2023-05-30T19:15:15+09:00</lastmod>
 </url>
 </urlset>
