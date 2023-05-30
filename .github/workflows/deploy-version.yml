@@ -33,7 +33,7 @@ jobs:
           # to <base url>/x.y.z version subfolder
           publish_dir: ./docs/_sites
           # destination_dir: "1.00"
-          destination_dir: ${{ env.RELEASE_VERSION }}
+          destination_dir: . #${{ env.RELEASE_VERSION }}
 
       - name: Deploy redirect
         uses: peaceiris/actions-gh-pages@v3
