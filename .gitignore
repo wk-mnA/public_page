@@ -1,1 +1,3 @@
-push_maintain.sh
+build
+make.bat
+preview.sh
