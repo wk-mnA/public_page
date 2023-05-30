@@ -2,7 +2,7 @@
 
 VERSION=$1
 if [ $VERSION = "" ]; then
-  echo "ERROR: please type version. e.g. ./push.sh 1.00"
+  echo "ERROR: please type version. e.g. ./redirect.sh 1.00"
   exit 1
 fi
 
@@ -19,7 +19,7 @@ dir_path="*"
 dirs=`find $dir_path -type d -name "*.**"`
 for dir in $dirs;
 do
-if [ $VERSION -nq $dir ]; then
+if [ $VERSION != $dir ]; then
     cp $VERSION/version.html $dir/version.html
     echo $dir
 fi
