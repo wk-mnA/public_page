@@ -27,7 +27,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # deploy the current public folder
           # to <base url>/x.y.z version subfolder
-          publish_dir: ./public
+          publish_dir: ./docs
           # destination_dir: "1.00"
           destination_dir: ${{ env.RELEASE_VERSION }}
 
