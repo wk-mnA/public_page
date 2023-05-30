@@ -6,6 +6,9 @@ if [ $VERSION = "" ]; then
   exit 1
 fi
 
+sed -i -e  "s/version: v[0-9]*\.[0-9][0-9]/version: v${VERSION}/g" ./docs/_config.yml 
+sed -i -e  "s/baseurl: ""/public_page/[0-9]*\.[0-9][0-9]/baseurl: ""/public_page/${VERSION}/g" ./docs/_config.yml 
+
 cd docs
 bundle exec jekyll build
 cd ..
