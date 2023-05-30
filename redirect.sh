@@ -21,7 +21,6 @@ for dir in $dirs;
 do
 if [ $VERSION != $dir ]; then
     cp $VERSION/version.html $dir/version.html
-    echo $dir
 fi
 done
 
