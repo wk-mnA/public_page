@@ -14,10 +14,10 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: actions/checkout@v2
-      - uses: helaili/jekyll-action@2.0.1
-        env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+      # - uses: actions/checkout@v2
+      # - uses: helaili/jekyll-action@2.0.1
+      #   env:
+      #     JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
 
       - name: get_version
         run: echo "RELEASE_VERSION=1.00" >> $GITHUB_ENV
@@ -31,7 +31,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # deploy the current public folder
           # to <base url>/x.y.z version subfolder
-          publish_dir: ./docs
+          publish_dir: ./
           # destination_dir: "1.00"
           destination_dir: ${{ env.RELEASE_VERSION }}
 
