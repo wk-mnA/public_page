@@ -5,9 +5,13 @@ on:
     branches:
       - master
 jobs:
-  deploy:
+  deploy-version:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - uses: helaili/jekyll-action@2.0.1
+        env:
+          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
 
       # https://github.com/actions/checkout
       - name: Checkout
